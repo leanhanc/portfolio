@@ -1,0 +1,42 @@
+---
+import { Image } from "@astrojs/image/components";
+
+// Assets
+import heroMobile from "../assets/img/hero-mobile.jpg";
+import heroDesktop from "../assets/img/hero-desktop.jpg";
+
+// Styles
+import "../styles/global.sass";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Leandro Hanc - Web Developer</title>
+	</head>
+
+	<body>
+		<header>
+			<Image
+				src={heroMobile}
+				alt="My hero image mobile"
+				class="mobile"
+				format="webp"
+				quality={1}
+			/>
+			<Image
+				src={heroDesktop}
+				alt="My hero image desktop"
+				format="webp"
+				class="desktop"
+				quality={20}
+			/>
+			<h1>Leandro Hanc</h1>
+		</header>
+		<main>
+			<p>hola</p>
+		</main>
+	</body>
+</html>
