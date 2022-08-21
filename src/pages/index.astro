@@ -1,13 +1,10 @@
 ---
-import { Image } from "@astrojs/image/components";
-
-// Assets
-import heroMobile from "../assets/img/hero-mobile.jpg";
-import heroDesktop from "../assets/img/hero-desktop.jpg";
-
 // Styles
 import "../styles/reset.sass";
 import "../styles/global.sass";
+
+// Components
+import Header from "../components/Header.astro";
 ---
 
 <meta charset="utf-8" />
@@ -16,49 +13,8 @@ import "../styles/global.sass";
 <meta name="description" content="Leandro Hanc - Web Developer Portfolio" />
 <title>Leandro Hanc - Web Developer</title>
 
-<style lang="sass">
-	@import "../styles/mixins.sass"
-	#Header
-		height: 100%
-		position: relative
-		.background
-			width: 100%
-			height: 100%
-			max-height: 100%
-			object-fit: cover
-			opacity: 0.4
-			position: absolute
-			top: 0
-			left: 0
-
-			&.desktop
-				display: none
-
-			+min-md
-				&.mobile
-					display: none
-				&.desktop
-					display: block
-</style>
-
 <body>
-	<header id="Header">
-		<Image
-			alt="My hero image mobile"
-			class="background mobile"
-			format="webp"
-			quality={20}
-			src={heroMobile}
-		/>
-		<Image
-			alt="My hero image desktop"
-			class="background desktop"
-			format="webp"
-			quality={20}
-			src={heroDesktop}
-		/>
-		<h1>Leandro Hanc</h1>
-	</header>
+	<Header />
 	<main>
 		<p>hola</p>
 	</main>
