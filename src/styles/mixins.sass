@@ -1,14 +1,14 @@
 @mixin min-sm
-	@media screen and (max-width: 499px)
-	@content
+	@media screen and (min-width: 499px)
+		@content
 
 @mixin min-md
-	@media screen and (min-width: 500px) and (max-width: 1199px)
-	@content
+	@media screen and (min-width: 500px)
+		@content
 
 @mixin min-lg
 	@media screen and (min-width: 1200px)
-	@content
+		@content
 
 @mixin clipped-rtl
 	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
