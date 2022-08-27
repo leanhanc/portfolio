@@ -46,6 +46,8 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 			<img src={twitterIcon} alt="My Twitter" width="24" height="24" />
 		</li>
 	</ul>
+
+	<a class="cta" href="mailto:leandrohanc@gmail.com">WORK TOGETHER</a>
 </header>
 
 <style lang="sass">
@@ -54,6 +56,9 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 	#header
 		height: 100%
 		position: relative
+		display: flex
+		flex-direction: column
+		align-items: center
 		padding: 100px
 
 		.background
@@ -92,6 +97,7 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 			text-shadow: var(--shadow-1)
 			position: relative
 
+		/* TITLE */
 		.title
 			color: var(--grey-500)
 			font-size: 3rem
@@ -106,6 +112,7 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 				@include min-lg
 					font-size: 8rem
 
+		/* SUBTITLE */
 		.subtitle
 			color: var(--blue)
 			font-size: 1.3rem
@@ -116,6 +123,7 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 			text-transform: uppercase
 			text-align: center
 
+		/* SOCIAL ICONS */
 		#social-icons
 			margin: 4rem auto
 			position: relative
@@ -124,7 +132,7 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 			justify-content: center
 			gap: 4rem
 
-			.social-icon 
+			.social-icon
 				cursor: pointer
 				transform: rotate(0) scale(1.2)
 				display: grid
@@ -136,4 +144,57 @@ import linkedinIcon from "../assets/img/social/linkedin.svg";
 					transform: rotate(1turn) scale(1.5)
 					transition: 0.35s all ease
 
+		/* CTA BUTTON */
+		a.cta,
+		a.cta:visited
+			background-image: linear-gradient(to right, var(--blue), var(--red), var(--purple))
+			border-radius: 3rem
+			border: none
+			color: white
+			cursor: pointer
+			font-family: 'Open Sans'
+			font-weight: 500
+			letter-spacing: 4px
+			margin-top: 4rem
+			opacity: 0.75
+			padding: 1rem
+			text-decoration: none
+			text-shadow: none
+			text-transform: uppercase
+			transition: all 0.4s
+			position: relative
+
+		a.cta:hover
+			transform: translateY(-3px)
+
+		a.cta:hover::after
+			transform: scaleX(1.4) scaleY(1.6)
+			opacity: 0
+
+		a.cta:active,
+		a.cta:focus
+			outline: none
+			transform: translateY(-1px)
+			box-shadow: 0 0.5rem 1rem rgba(black, 0.2)
+
+		a.cta::after
+			content: ''
+			display: block
+			height: 100%
+			width: 100%
+			border-radius: 4rem
+			z-index: -1
+			position: absolute
+			top: 0
+			background-image: linear-gradient(to right, var(--blue), var(--red), var(--purple))
+			left: 0
+			transition: all 0.4s
+
+		@media screen and (min-width: 1100px)
+			a.cta,
+			a.cta:visited,
+			a.cta:active
+				font-size: 1rem
+				padding: 1.2rem 3rem
+				width: fit-content
 </style>
