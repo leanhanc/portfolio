@@ -1,0 +1,130 @@
+---
+// Components
+import { Image } from "@astrojs/image/components";
+
+// Assets
+import heroMobile from "../../assets/img/hero-mobile.jpg";
+import heroDesktop from "../../assets/img/hero-desktop.jpg";
+
+import githubIcon from "../../assets/img/social/github.svg";
+import twitterIcon from "../../assets/img/social/twitter.svg";
+import linkedinIcon from "../../assets/img/social/linkedin.svg";
+
+
+
+// Components
+import LocaleSwitch from "../LocaleSwitch.svelte";
+import Heading from "./components/Heading.svelte";
+import Cta from "./components/Cta.svelte";
+
+---
+
+<header id="header">
+  <Image
+    alt=""
+    class="background mobile"
+    format="webp"
+    quality={20}
+    src={heroMobile}
+  />
+  <Image
+    alt=""
+    class="background desktop"
+    format="webp"
+    quality={50}
+    src={heroDesktop}
+  />
+  <div class="dark-layer" aria-hidden="true"></div>
+
+  <Heading client:load />
+
+  <ul id="social-icons">
+    <li class="social-icon">
+      <a href="https://github.com/leo10099" target="_blank">
+        <img src={githubIcon} alt="Github Page" width="24" height="24" />
+      </a>
+    </li>
+    <li class="social-icon">
+      <a href="https://www.linkedin.com/in/leandrohanc" target="_blank">
+        <img src={linkedinIcon} alt="My LinkedIn Page" width="24" height="24" />
+      </a>
+    </li>
+    <li class="social-icon">
+      <a href="https://twitter.com/HancLeandro" target="_blank">
+        <img src={twitterIcon} alt="My Twitter" width="24" height="24" />
+      </a>
+    </li>
+  </ul>
+
+  <Cta client:load/>
+
+  <LocaleSwitch client:load />
+</header>
+
+<style lang="sass">
+  @import "../../styles/mixins.sass"
+
+  #header
+    height: 100%
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    .background
+      width: 100%
+      height: 100%
+
+      object-fit: cover
+      position: absolute
+      top: 0
+      left: 0
+      @include clipped-rtl
+
+      &.desktop
+        display: none
+
+        @include min-md
+          display: block
+
+      &.mobile
+        @include min-md
+          display: none
+
+    .dark-layer
+      width: 100%
+      height: 100%
+      background-color: black
+      inset: 0
+      opacity: 0.4
+      position: absolute
+      @include clipped-rtl
+
+
+    /* SOCIAL ICONS */
+    #social-icons
+      margin: 3.5rem auto
+      position: relative
+      width: 100%
+      display: flex
+      justify-content: center
+      gap: 2rem
+
+      @include min-md
+        margin: 4.5rem auto
+
+      .social-icon
+        cursor: pointer
+        transform: rotate(0) scale(1.2)
+        display: grid
+        place-content: conter
+        transition: 0.3s all ease
+
+        &:hover
+          backface-visibility: hidden
+          transform: rotate(1turn) scale(1.5)
+          transition: 0.35s all ease
+
+  
+</style>
