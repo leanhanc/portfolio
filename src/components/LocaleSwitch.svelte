@@ -3,14 +3,14 @@
   import { localeAtom, toggleLocale } from "../store";
 </script>
 
-<menu id="locale-switch">
+<menu id="locale-switch" class="main-container">
   <li
     class={$localeAtom === "es" ? "locale-item-active" : "locale-item"}
     on:click={toggleLocale}
   >
     es
   </li>
-  |
+  <span> | </span>
   <li
     class={$localeAtom === "en" ? "locale-item-active" : "locale-item"}
     on:click={toggleLocale}
@@ -20,13 +20,17 @@
 </menu>
 
 <style lang="sass">
+    @import "../styles/mixins"
+  
     #locale-switch
         display: flex
+        justify-content: flex-end
         font-size: 1.2rem
-        gap: 0.5rem
-        position: absolute
-        bottom: 2rem
-        right: 2rem
+        transform: translateY(-4rem)
+      
+        
+        span
+          margin: auto 0.5rem
 
         .locale-item
             cursor: pointer

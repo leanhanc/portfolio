@@ -2,5 +2,10 @@
 	"header": {
 		"subtitle": "Ideas que cobran vida",
 		"cta": "Construyamos juntos"
+	},
+	"about": {
+		"title": "Hola!",
+		"subtitle": "Soy Leandro, un desarrollador autodidacta",
+		"bio": "Me encanta construir aplicaciones web y resolver problemas técnicos. Nunca dejo de aprender, siempre estoy intentando mejorar mis habilidades. Trato de ser como una esponja, absorbiendo tanta información como pueda para poder ser cada día un mejor desarrollador."	
 	}
 }

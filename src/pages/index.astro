@@ -5,6 +5,8 @@ import "../styles/global.sass";
 
 // Components
 import Header from "../components/Header/index.astro";
+import LocaleSwitch from "../components/LocaleSwitch.svelte";
+import About from "../components/About/index.astro"
 ---
 
 <html lang="es">
@@ -21,8 +23,9 @@ import Header from "../components/Header/index.astro";
 
   <title>Leandro Hanc - Web Developer</title>
   <Header/>
-
+  
   <main>
-
+    <LocaleSwitch client:load />
+    <About />
   </main>
 </html>
