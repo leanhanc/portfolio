@@ -26,5 +26,5 @@
     line-height: 1.75
 
     @include min-md
-        max-width: 80%
+        max-width: 75%
 </style>

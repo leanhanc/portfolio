@@ -3,6 +3,7 @@
 
   // Components
   import Separator from "../../Separator.svelte";
+  import BackgroundText from "../../SectionTitleInBackground.svelte";
 
   // Locale Mesages
   import esMessages from "../../../locales/es.json";
@@ -14,13 +15,13 @@
   };
 </script>
 
-<header id="bio-header">
+<div id="bio-header">
   <Separator />
-  <h2 class="title">{messages[$localeAtom].title}</h2>
+  <p class="title">{messages[$localeAtom].title}</p>
   <p class="bio-subtitle">
     {messages[$localeAtom].subtitle}
   </p>
-</header>
+</div>
 
 <style lang="sass">
     @import "../../../styles/mixins.sass"
@@ -30,7 +31,7 @@
         .title
             font-size: 2rem
             font-weight: 700
-            margin-top: 1rem
+            margin-top: 2rem
             letter-spacing: 2px
             text-shadow: var(--shadow-2)
             @include min-md

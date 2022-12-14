@@ -2,7 +2,8 @@
 import { Image } from "@astrojs/image/components";
 
 // Components
-import Heading from "./components/Heading.svelte";
+import SectionTitleInBackground from "../SectionTitleInBackground.svelte";
+import Intro from "./components/Intro.svelte";
 import Bio from "./components/Bio.svelte";
 
 // Assets
@@ -11,9 +12,11 @@ import Me from "../../assets/img/about-me.jpg"
 ---
 
 <section id="about-me">
+    <SectionTitleInBackground text="about" />
+
     <div class="main-container container">
         <div class="left-column">
-            <Heading client:load />
+            <Intro client:load />
             <Bio client:load />
         </div>
     
@@ -31,9 +34,15 @@ import Me from "../../assets/img/about-me.jpg"
   #about-me
     height: 100%
     width: 100%
+    background-color: var(--grey-500)
     margin-top: -4rem
     padding-top: 4rem
-    background-color: var(--grey-500)
+    margin-bottom: -4rem
+    padding-bottom: 4rem
+    position: relative
+    @include min-md
+        padding-top: 8rem
+        padding-bottom: 8rem
 
     .main-container
         height: 100%
@@ -47,11 +56,14 @@ import Me from "../../assets/img/about-me.jpg"
 
     .profile-pic
         height: auto
-        width: 100%
+        width: 50%
         border-radius: 4px
         filter: drop-shadow(black 0px 0px 0.5rem)
-        margin-top: 2rem
+        margin-top: 4rem
+        margin-left: auto
+        margin-right: auto
 
-        @include min-sm
+        @include min-md
+            margin-top: 0
             max-width: 272px
 </style>
