@@ -1,0 +1,45 @@
+---
+// Components
+import SectionTitleInBackground from "../SectionTitleInBackground.svelte";
+import SkillItem from "./components/SkillItem.svelte";
+
+const skillItems = ["HTML", "CSS", "Javascript", "Typescript", "React", "Vue", "Svelte", "GraphQL", "Node JS", "SQL", "Mongo DB", , "Docker"]
+---
+
+<section id="skills">
+    <div class="main-container">
+        <SectionTitleInBackground text="skills" />
+        <ul class="skill-items">
+            {skillItems.map((skillItem, index)=>(
+                <SkillItem name={skillItem} index={index}/>
+            ))}
+        </ul>
+    </div>
+
+
+</section>
+
+<style lang="sass">
+    @import "../../styles/mixins.sass"
+  
+    #skills
+      height: 100%
+      width: 100%
+      background-color: var(--grey-900)
+      clip-path: polygon(0 0,100% 15%,100% 100%,0 100%)
+      position: relative
+      padding-top: 4rem
+      padding-bottom: 4rem
+      @include min-md
+         padding-top: 8rem
+         padding-bottom: 8rem
+      display: flex
+      align-items: center
+      .skill-items
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 4rem
+        margin: auto
+        max-width: 512px
+  </style>

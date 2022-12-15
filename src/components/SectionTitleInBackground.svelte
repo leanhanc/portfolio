@@ -20,7 +20,7 @@
         .background-text
             color: var(--grey-800)
             font-family: Lato
-            font-size: 35vw
+            font-size: 33vw
             font-weight: 700
             opacity: 1
 </style>
