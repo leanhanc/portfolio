@@ -18,7 +18,6 @@
   @import "../../../styles/mixins.sass"
 
   .headline
-    
       cursor: default
       position: relative
       text-align: center
@@ -36,7 +35,7 @@
 
         @include min-md
           line-height: 1
-          font-size: 5.5rem
+          font-size: 7rem
 
       /* SUBTITLE */
       &.subtitle
