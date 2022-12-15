@@ -6,8 +6,8 @@ import "../styles/global.sass";
 // Components
 import Header from "../components/Header/index.astro";
 import LocaleSwitch from "../components/LocaleSwitch.svelte";
-import About from "../components/About/index.astro"
-import Skills from "../components/Skills/index.astro"
+import About from "../components/About/index.astro";
+import Skills from "../components/Skills/index.astro";
 ---
 
 <html lang="es">
@@ -22,24 +22,26 @@ import Skills from "../components/Skills/index.astro"
     rel="preload"
     as="stylesheet"
   />
-  <link rel="preload" as="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link
+    rel="preload"
+    as="stylesheet"
+    href="https://unpkg.com/aos@next/dist/aos.css"
+  />
 
   <title>Leandro Hanc - Web Developer</title>
-<body>
-  <Header/>
-  <main>
-    <LocaleSwitch client:load />
-    <About />
-    <Skills />
-  </main>
+  <body>
+    <Header />
+    <main>
+      <LocaleSwitch client:load />
+      <About />
+      <Skills />
+    </main>
 
-  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script is:inline>
-    AOS.init({
-      once: true
-    });
-  </script>
-</body>
-  
- 
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
 </html>
