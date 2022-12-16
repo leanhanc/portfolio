@@ -150,7 +150,6 @@
                     width: 50%
 
         &-back
-            height: 100%
             display: flex
             align-items: center
             flex-direction: column
