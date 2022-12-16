@@ -163,7 +163,7 @@
               color: var(--grey-500)
               font-size: 3rem
               text-transform: uppercase
-              text-align:center
+              text-align: center
               letter-spacing: 1.1px
               font-weight: bold
             &-subtitle
