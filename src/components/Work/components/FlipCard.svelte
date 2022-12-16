@@ -35,8 +35,6 @@
     <p class="flip-card-back-description">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut repudiandae
       illum tempore alias suscipit reprehenderit soluta fugiat ab tenetur odio.
-      Sit sapiente ab voluptate laboriosam ratione. Voluptate hic doloribus
-      aspernatur?
     </p>
     <a
       href={projectLink}
@@ -55,14 +53,15 @@
     .flip-card
         width: 300px
         height: 500px
-        border-radius: 4px
-        perspective: 150rem
-        position: relative
-        margin: 4rem auto
-
         @include min-md
             width: 350px
             height: 520px
+        border-radius: 4px
+        perspective: 150rem
+        position: relative
+        margin: auto
+
+
 
         &:hover
             .flip-card-front
@@ -71,8 +70,11 @@
                 transform: rotateY(0)
 
         &-front, &-back
-            width: 100%
-            height: 100%
+          width: 300px
+          height: 500px
+          @include min-md
+            width: 350px
+            height: 520px
             backface-visibility: hidden
             -webkit-backface-visibility: hidden
             background: #fff
@@ -155,8 +157,11 @@
             flex-direction: column
             background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85))
             transform: rotateY(-180deg)
-            padding: 2rem
             position: relative
+
+            > *
+              max-width: 80%
+              margin: auto
 
             &-title
               color: var(--grey-500)
@@ -169,15 +174,15 @@
               color: var(--grey-500)
               font-size: 1.5rem
               text-transform: uppercase
-              margin-top: 2rem
+              margin-top: 1rem
             &-description
               color: #fff
-              margin-top: 4rem
+              margin-top: 2rem
             &-cta
               background-color: var(--grey-500)
               box-shadow: none
               color: #fff
-              margin-top: 4rem
+              margin: 3rem auto
               text-align: center
 
               &,
