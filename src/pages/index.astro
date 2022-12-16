@@ -8,6 +8,7 @@ import Header from "../components/Header/index.astro";
 import LocaleSwitch from "../components/LocaleSwitch.svelte";
 import About from "../components/About/index.astro";
 import Skills from "../components/Skills/index.astro";
+import Work from "../components/Work/index.astro";
 ---
 
 <html lang="es">
@@ -18,7 +19,7 @@ import Skills from "../components/Skills/index.astro";
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Allison&family=Lato:wght@700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Allison&family=Lato:wght@300;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap"
     rel="preload"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'"
@@ -37,6 +38,7 @@ import Skills from "../components/Skills/index.astro";
       <LocaleSwitch client:load />
       <About />
       <Skills />
+      <Work />
     </main>
 
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>

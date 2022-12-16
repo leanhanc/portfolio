@@ -48,7 +48,7 @@
   a.cta:focus
      outline: none
      transform: translateY(-1px)
-     box-shadow: 0 0.5rem 1rem rgba(black, 0.2)
+     box-: 0 0.5rem 1rem rgba(black, 0.2)
 
   a.cta::after
      content: ''

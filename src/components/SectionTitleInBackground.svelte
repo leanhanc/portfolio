@@ -1,8 +1,9 @@
 <script lang="ts">
   export let text = "";
+  export let zIndex = 0;
 </script>
 
-<header class="section-header">
+<header class="section-header" style="z-index: {zIndex};">
   <h2 class="background-text">{text}</h2>
 </header>
 
@@ -13,7 +14,6 @@
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        z-index: 0
         opacity: 0.1
         text-align: center
         pointer-events: none

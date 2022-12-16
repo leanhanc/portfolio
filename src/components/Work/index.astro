@@ -1,0 +1,41 @@
+---
+// Components
+import SectionTitleInBackground from "../SectionTitleInBackground.svelte";
+import FlipCard from "./components/FlipCard.svelte";
+
+// Assets
+import got from "../../assets/img/work/got.jpg";
+
+const projects = [
+  {
+    name: "¿Quién sos en Game of Thrones?",
+    image: got,
+    technologies: ["React", "React Router"],
+    type: "Sideproject",
+    year: 2018,
+    link: "https://test-got.now.sh",
+  },
+];
+---
+
+<section id="work">
+  <div class="main-container">
+    <SectionTitleInBackground text="work" />
+    <FlipCard
+      projectImage={projects[0].image.src}
+      projectName={projects[0].name}
+      projectTechnologies={projects[0].technologies}
+      projectType={projects[0].type}
+      projectLink={projects[0].link}
+      projectYear={projects[0].year}
+    />
+  </div>
+</section>
+
+<style lang="sass">
+  #work
+    min-height: 100%
+    padding-top: 10rem
+    padding-bottom: 10rem
+    position: relative
+</style>
