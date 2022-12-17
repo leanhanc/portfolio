@@ -5,30 +5,79 @@ import FlipCard from "./components/FlipCard.svelte";
 
 // Assets
 import got from "../../assets/img/work/got.jpg";
+import cdc from "../../assets/img/work/crema-de-caramelo.jpg";
+import dji from "../../assets/img/work/dji.jpg";
 
 const projects = [
   {
-    name: "¿Quién sos en Game of Thrones?",
+    name: {
+      es: "¿Quién sos en Game of Thrones?",
+      en: "Which GOT character are you?",
+    },
+    description: {
+      es: "Descubrí qué personaje sos contestando cuatro preguntas sobre tu personalidad y filosofía personal.",
+      en: "Find out which character are you answering four questions about your personality and personal philosophy.",
+    },
     image: got,
     technologies: ["React", "React Router"],
     type: "Sideproject",
-    year: 2018,
+    year: 2020,
     link: "https://test-got.now.sh",
+    repoUrl: "https://github.com/leo10099/which-got-character-are-you",
+  },
+  {
+    name: {
+      es: "Crema de caramelo",
+      en: "Crema de caramelo",
+    },
+    description: {
+      es: "Sitio desarrollado para una pequeña empresa que prepara hermosas mesas dulces para eventos.",
+      en: "Website for a small business. Crema de Caramelo designs beautiful Candy Bar Buffets for events.",
+    },
+    image: cdc,
+    technologies: ["React", "React Router", "Node JS", "Express JS"],
+    type: "Freelance",
+    year: 2020,
+    link: "https://bit.do/cremadecaramelo",
+    repoUrl: "https://github.com/leo10099/crema-de-caramelo",
+  },
+  {
+    name: {
+      es: "Dev job inspector",
+      en: "Dev job inspector",
+    },
+    description: {
+      es: "Aplicación web que te ayuda a encontrar empleos como desarrollador de software en Argentina.",
+      en: "Web app that helps you find Software Developer jobs in Argentina.",
+    },
+    image: dji,
+    technologies: ["React", "Node JS", "Puppeteer", "Typescript"],
+    type: "Freelance",
+    year: 2021,
+    link: "https://dev-jobs.vercel.app/",
+    repoUrl: "https://github.com/leo10099",
   },
 ];
 ---
 
 <section id="work">
   <div class="main-container">
-    <SectionTitleInBackground text="work" />
-    <FlipCard
-      projectImage={projects[0].image.src}
-      projectName={projects[0].name}
-      projectTechnologies={projects[0].technologies}
-      projectType={projects[0].type}
-      projectLink={projects[0].link}
-      projectYear={projects[0].year}
-    />
+    <SectionTitleInBackground text="work" client:load />
+    {
+      projects.map((project) => (
+        <FlipCard
+          client:load
+          projectImage={project.image.src}
+          projectName={project.name}
+          projectTechnologies={project.technologies}
+          projectType={project.type}
+          projectLink={project.link}
+          projectYear={project.year}
+          projectRepoUrl={project.repoUrl}
+          projectDescription={project.description}
+        />
+      ))
+    }
   </div>
 </section>
 
@@ -38,4 +87,7 @@ const projects = [
     padding-top: 10rem
     padding-bottom: 10rem
     position: relative
+    .main-container
+      display: flex
+      flex-wrap: wrap
 </style>

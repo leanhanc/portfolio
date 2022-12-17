@@ -7,5 +7,13 @@
 		"title": "Hola!",
 		"subtitle": "Soy Leandro, un desarrollador autodidacta",
 		"bio": "Me encanta construir aplicaciones web y resolver problemas técnicos. Nunca dejo de aprender, siempre estoy intentando mejorar mis habilidades. Trato de ser como una esponja, absorbiendo tanta información como pueda para poder ser cada día un mejor desarrollador."	
+	},
+	"work": {
+		"openProject": "Abrir",
+		"openRepo": "Ver código",
+		"projectType": "Tipo de Proyecto",
+		"lastUpdate": "Última actualización",
+		"seeMore": "Ver más",
+		"seeMoreAlt": "Ver más sobre este proyecto"
 	}
 }

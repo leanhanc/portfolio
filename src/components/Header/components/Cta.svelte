@@ -21,7 +21,7 @@
   /* CTA BUTTON */
   a.cta,
   a.cta:visited
-    background-image: linear-gradient(to right, var(--blue500), var(--red500), var(--purple500))
+    background-image: linear-gradient(to right, var(--blue-500), var(--red-500), var(--purple-500))
     border-radius: 3rem
     border: none
     color: white
@@ -59,7 +59,7 @@
      z-index: -1
      position: absolute
      top: 0
-     background-image: linear-gradient(to right, var(--blue500), var(--red500), var(--purple500))
+     background-image: linear-gradient(to right, var(--blue-500), var(--red-500), var(--purple-500))
      left: 0
      transition: all 0.4s
 

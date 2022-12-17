@@ -5,5 +5,5 @@
         width: 70%
         max-width: 256px
         height: 3px
-        background: linear-gradient(to right, var(--blue500), var(--red500), var(--purple500))
+        background: linear-gradient(to right, var(--blue-500), var(--red-500), var(--purple-500))
 </style>

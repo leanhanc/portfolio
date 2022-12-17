@@ -39,7 +39,7 @@
 
       /* SUBTITLE */
       &.subtitle
-        color: var(--blue300)
+        color: var(--blue-300)
         font-size: 1rem
         font-weight: 500
         letter-spacing: 8px

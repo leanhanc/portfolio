@@ -1,11 +1,26 @@
 <script lang="ts">
-  // Assets
-  export let projectName = "";
+  import { localeAtom } from "../../../store";
+
+  // Components
+  import FlipCardButton from "./FlipCardButton.svelte";
+
+  export let projectName = { es: "", en: "" };
+  export let projectDescription = { es: "", en: "" };
   export let projectImage: ImageMetadata["src"];
   export let projectTechnologies: string[] = [];
   export let projectYear = 0;
   export let projectType = "";
   export let projectLink = "";
+  export let projectRepoUrl = "";
+
+  // Locale Mesages
+  import esMessages from "../../../locales/es.json";
+  import enMessages from "../../../locales/en.json";
+
+  const messages = {
+    en: enMessages.work,
+    es: esMessages.work,
+  };
 </script>
 
 <article class="flip-card">
@@ -15,7 +30,7 @@
       style="background-image: linear-gradient(to right bottom, rgb(41, 152, 255), rgb(86, 67, 250), rgb(219, 84, 97)), url({projectImage});"
     />
     <header class="flip-card-front-title">
-      <h3 class="flip-card-front-title-text">{projectName}</h3>
+      <h3 class="flip-card-front-title-text">{projectName[$localeAtom]}</h3>
     </header>
     <ul>
       {#each projectTechnologies as tech}
@@ -25,25 +40,37 @@
       {/each}
     </ul>
     <footer class="flip-card-front-footer">
-      <small>VER MÁS </small>
-      <img src={"chevron-right.svg"} alt="Ver más sobre este proyecto" />
+      <small> {messages[$localeAtom].seeMore}</small>
+      <img src={"chevron-right.svg"} alt={messages[$localeAtom].seeMoreAlt} />
     </footer>
   </section>
   <section class="flip-card-back">
-    <h3 class="flip-card-back-title">{projectYear}</h3>
-    <p class="flip-card-back-subtitle">{projectType}</p>
+    <dl>
+      <dt class="flip-card-back-subtitle">
+        {messages[$localeAtom].projectType}
+      </dt>
+      <dd class="flip-card-back-title">{projectType}</dd>
+      <dt class="flip-card-back-subtitle">
+        {messages[$localeAtom].lastUpdate}
+      </dt>
+      <dd class="flip-card-back-title">{projectYear}</dd>
+    </dl>
     <p class="flip-card-back-description">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut repudiandae
-      illum tempore alias suscipit reprehenderit soluta fugiat ab tenetur odio.
+      {projectDescription[$localeAtom]}
     </p>
-    <a
-      href={projectLink}
-      rel="noopoener noreferer"
-      target="_blank"
-      class="flip-card-back-cta"
-    >
-      OPEN
-    </a>
+    <FlipCardButton
+      text={{
+        es: esMessages.work.openProject,
+        en: enMessages.work.openProject,
+      }}
+      link={projectLink}
+      variant="fill"
+    />
+    <FlipCardButton
+      text={{ es: esMessages.work.openRepo, en: enMessages.work.openRepo }}
+      link={projectRepoUrl}
+      variant="outline"
+    />
   </section>
 </article>
 
@@ -59,8 +86,8 @@
         border-radius: 4px
         perspective: 150rem
         position: relative
-        margin: auto
-
+        margin-left: auto
+        margin-right: auto
 
 
         &:hover
@@ -75,14 +102,15 @@
           @include min-md
             width: 350px
             height: 520px
-            backface-visibility: hidden
-            -webkit-backface-visibility: hidden
-            background: #fff
-            border-radius: 4px
-            box-shadow: var(--shadow-3)
-            overflow: hidden
-            position: absolute
-            transition: all 0.5s ease-in-out
+
+          backface-visibility: hidden
+          -webkit-backface-visibility: hidden
+          background: #fff
+          border-radius: 4px
+          box-shadow: var(--shadow-3)
+          overflow: hidden
+          position: absolute
+          transition: all 0.5s ease-in-out
 
         &-front
             opacity: 0.75
@@ -103,7 +131,6 @@
                 right: 20px
                 text-align: right
                 width: 76%
-                z-index: 20
 
                 &-text
                     display: inline
@@ -158,76 +185,30 @@
             background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85))
             transform: rotateY(-180deg)
             position: relative
+            text-align: center
 
             > *
-              max-width: 80%
-              margin: auto
+              max-width: 90%
+
 
             &-title
               color: var(--grey-500)
-              font-size: 3rem
+              font-size: 2rem
               text-transform: uppercase
               text-align: center
               letter-spacing: 1.1px
               font-weight: bold
             &-subtitle
-              color: var(--grey-500)
-              font-size: 1.5rem
-              text-transform: uppercase
+              color: var(--grey-600)
+              font-size: 1rem
+              letter-spacing: 1px
               margin-top: 1rem
+              text-transform: uppercase
+              &:first-of-type
+                padding-top: 1rem
             &-description
-              color: #fff
+              color: var(--grey-500)
+              font-size: 14px
               margin-top: 2rem
-            &-cta
-              background-color: var(--grey-500)
-              box-shadow: none
-              color: #fff
-              margin: 3rem auto
-              text-align: center
-
-              &,
-              &:link,
-              &:visited 
-                width: 50%
-                border-radius: 32px
-                border: none
-                color: var(--purple-500)
-                cursor: pointer
-                display: block
-                font-weight: 500
-                letter-spacing: 4px
-                padding: 16px 32px
-                position: relative
-                text-decoration: none
-                text-shadow: none
-                text-transform: uppercase
-                transition: all 0.2s
-
-                &:hover 
-                  transform: translateY(-3px)
-
-                  &::after 
-                    transform: scaleX(1.4) scaleY(1.6)
-                    opacity: 0
-
-                &:active,
-                &:focus 
-                  outline: none
-                  transform: translateY(-1px)
-
-
-                &::after 
-                  content: ''
-                  display: block
-                  height: 100%
-                  width: 100%
-                  border-radius: 32px
-                  position: absolute
-                  top: 0
-                  border: 2px solid var(--grey-500)
-
-                  left: 0
-                  z-index: -1
-                  transition: all 0.4s
 
 </style>

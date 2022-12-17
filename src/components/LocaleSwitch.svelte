@@ -35,7 +35,7 @@
         .locale-item
             cursor: pointer
             &-active
-                background: linear-gradient(to right, var(--blue500), var(--red500), var(--purple500))
+                background: linear-gradient(to right, var(--blue-500), var(--red-500), var(--purple-500))
                 transition: 300ms all ease
                 -webkit-text-fill-color: transparent
                 background-clip: text
