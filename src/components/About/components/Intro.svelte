@@ -37,7 +37,7 @@
             @include min-md
                 font-size: 2.5rem
         .bio-subtitle
-            color: var(--grey-700)
+            color: var(--grey-800)
             font-size: 1rem
             letter-spacing: 1.2px
             margin-top: 0.5rem
