@@ -5,8 +5,8 @@
 	},
 	"about": {
 		"title": "Hola!",
-		"subtitle": "Soy Leandro, un desarrollador autodidacta",
-		"bio": "Me encanta construir aplicaciones web y resolver problemas técnicos. Nunca dejo de aprender, siempre estoy intentando mejorar mis habilidades. Trato de ser como una esponja, absorbiendo tanta información como pueda para poder ser cada día un mejor desarrollador."	
+		"subtitle": "Soy Leandro, un desarrollador de Buenos Aires, Argentina.",
+		"bio": "Tengo más de 4 años de experiencia trabajando con Javascript en aplicaciones web y móviles. Aprendo rápido nuevas tecnologías, presto atención a los detalles, me preocupo por la performance, la accesibilidad y la experiencia del usuario."
 	},
 	"work": {
 		"openProject": "Abrir",

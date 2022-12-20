@@ -43,6 +43,7 @@
             margin-top: 0.5rem
             font-weight: 500
             text-shadow: var(--shadow-2)
+            max-width: 80%
             @include min-md
                 font-size: 1.2rem
 
