@@ -15,5 +15,8 @@
 		"lastUpdate": "Última actualización",
 		"seeMore": "Ver más",
 		"seeMoreAlt": "Ver más sobre este proyecto"
+	},
+	"footer":{
+		"builtWith": "hecho con"
 	}
 }

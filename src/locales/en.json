@@ -15,5 +15,8 @@
 		"lastUpdate": "Last update",
 		"seeMore": "Learn more",
 		"seeMoreAlt": "Learn more about this project"
+	},
+	"footer":{
+		"builtWith": "built with"
 	}
 }
