@@ -14,7 +14,7 @@
 		"projectType": "Tipo de Proyecto",
 		"lastUpdate": "Última actualización",
 		"seeMore": "Ver más",
-		"seeMoreAlt": "Ver más sobre este proyecto"
+		"pressCardToFlip": "Presioná las tarjetas para darlas vuelta y ver más detalles sobre el proyecto."
 	},
 	"footer":{
 		"builtWith": "hecho con"

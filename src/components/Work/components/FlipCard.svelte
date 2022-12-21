@@ -39,10 +39,6 @@
         </li>
       {/each}
     </ul>
-    <footer class="flip-card-front-footer">
-      <small> {messages[$localeAtom].seeMore}</small>
-      <img src={"chevron-right.svg"} alt={messages[$localeAtom].seeMoreAlt} />
-    </footer>
   </section>
   <section class="flip-card-back">
     <dl>
@@ -143,26 +139,8 @@
                     -webkit-box-decoration-break: clone
                     background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85))
 
-            &-footer
-                display: flex
-                align-items: center
-                position: absolute
-                left: 50%
-                bottom: 16px
-                transform: translateX(-50%)
-                small
-                   flex: 1
-                   color: var(--purple-500)
-                img
-                  width: 16px
-                  height: 16px
-                  margin-left: 4px
-                @include min-md
-                  display: none
-
         ul
             height: 280px
-            padding: 16px
             display: flex
             align-items: center
             justify-content: center

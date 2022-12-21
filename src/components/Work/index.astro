@@ -2,6 +2,7 @@
 // Components
 import SectionTitleInBackground from "../SectionTitleInBackground.svelte";
 import FlipCard from "./components/FlipCard.svelte";
+import PressCardToFlip from "./components/PressCardToFlip.svelte";
 
 // Assets
 import got from "../../assets/img/work/got.jpg";
@@ -62,6 +63,7 @@ const projects = [
 
 <section id="work">
   <div class="main-container">
+    <PressCardToFlip client:load />
     <SectionTitleInBackground text="work" client:load />
     {
       projects.map((project) => (
@@ -90,4 +92,5 @@ const projects = [
     .main-container
       display: flex
       flex-wrap: wrap
+      gap: 2rem
 </style>
