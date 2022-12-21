@@ -10,6 +10,8 @@
     en: enMessages.footer,
     es: esMessages.footer,
   };
+
+  const thisYear = new Date().getFullYear();
 </script>
 
 <footer id="footer">
@@ -21,7 +23,8 @@
   {messages[$localeAtom].builtWith}
   <a href="https://astro.build" target="_blank" rel="noopener noreferer"
     >Astro</a
-  > ❤️. Leandro Hanc, 2022.
+  >
+  ❤️.&nbsp; Leandro Hanc, {thisYear}.
 </footer>
 
 <style lang="sass">
