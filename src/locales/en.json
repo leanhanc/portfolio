@@ -1,22 +1,22 @@
 {
-	"header": {
-		"subtitle": "Ideas bringed to life",
-		"cta": "Let's build together"
-	},
-	"about": {
-		"title": "Hey there!",
-		"subtitle": "I'm Leandro, a developer from Buenos Aires, Argentina.",
-		"bio": "I have +4 years of experience working with Javascript on web and mobile applications. I pay attention to detail and I'm a also a quick learner. I care deeply about performance, accessibility and user experience."
-	},
-	"work": {
-		"openProject": "Open",
-		"openRepo": "View code",
-		"projectType": "Project type",
-		"lastUpdate": "Last update",
-		"seeMore": "Learn more",
-		"pressCardToFlip": "Press the cards to flip them and see more details about the project."
-	},
-	"footer":{
-		"builtWith": "built with"
-	}
+  "header": {
+    "subtitle": "Ideas bringed to life",
+    "cta": "Let's build together"
+  },
+  "about": {
+    "title": "Hey there!",
+    "subtitle": "I'm Leandro, a developer from Buenos Aires, Argentina.",
+    "bio": "I have +4 years of experience working with Javascript/Typescript on web and mobile applications. I pay attention to detail and I am a quick learner. I care deeply about performance, accessibility and user experience."
+  },
+  "work": {
+    "openProject": "Open",
+    "openRepo": "View code",
+    "projectType": "Project type",
+    "lastUpdate": "Last update",
+    "seeMore": "Learn more",
+    "pressCardToFlip": "Press the cards to flip them and see more details about the project."
+  },
+  "footer": {
+    "builtWith": "built with"
+  }
 }
